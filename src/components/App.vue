@@ -1,19 +1,18 @@
 <template>
-    <div id="app" class="bg-dark-1">
-        <NavBar />
-        <router-view></router-view>
-        <Footer />
-    </div>
+  <div
+    id="app"
+    class="bg-dark-1"
+  >
+    <NavBar />
+    <router-view />
+    <Footer />
+  </div>
 </template>
 
 <script>
     import NavBar from "./NavBar.vue";
     export default {
-        name: "app",
-
-        created () {
-            document.title = 'Bence László';
-        },
+        name: "App",
 
 
         components: {
@@ -24,6 +23,10 @@
         data: () => {
             return {
             };
+        },
+
+        created () {
+            document.title = 'Bence László';
         }
     };
 </script>

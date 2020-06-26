@@ -1,15 +1,15 @@
 <template>
-    <div class="bg-dark text-light">
-        <h2>Open Source Contributions</h2>
+  <div class="bg-dark text-light">
+    <h2>Open Source Contributions</h2>
 
-        <b-card-group bg-dark>
-            <OpenSourceProject
-                v-for="project in projects"
-                v-bind:key="project.name"
-                v-bind="project"
-            />
-        </b-card-group>
-    </div>
+    <b-card-group bg-dark>
+      <OpenSourceProject
+        v-for="project in projects"
+        :key="project.name"
+        v-bind="project"
+      />
+    </b-card-group>
+  </div>
 </template>
 
 <script>

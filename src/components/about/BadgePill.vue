@@ -1,5 +1,10 @@
 <template>
-    <b-badge pill :variant="variant">{{ label }}</b-badge>
+  <b-badge
+    pill
+    :variant="variant"
+  >
+    {{ label }}
+  </b-badge>
 </template>
 
 <script>

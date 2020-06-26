@@ -1,19 +1,19 @@
 {
   "name": "bencelaszlo.hu",
-  "author": "Bence László <bencelaszlo@protonmail.com> (https://bencelaszlo.hu)",
   "version": "0.2.2",
   "private": true,
+  "author": "Bence László <bencelaszlo@protonmail.com> (https://bencelaszlo.hu)",
   "scripts": {
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run build; npm run blog:build; git add *; git commit -m \"(dist/*): Regenerate static files.\"; git subtree push --prefix dist origin master",
     "blog": "vuepress dev blog",
     "blog:build": "vuepress build blog",
     "start": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "deploy": "npm run build; npm run blog:build; git add *; git commit -m \"(dist/*): Regenerate static files.\"; git subtree push --prefix dist origin master",
-    "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit --passWithNoTests"
   },
   "dependencies": {
-    "@vue/cli-plugin-unit-jest": "^4.3.1",
+    "@vue/cli-plugin-unit-jest": "^4.4.6",
     "animejs": "^3.2.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
@@ -22,18 +22,18 @@
     "portal-vue": "^2.1.7",
     "vue": "^2.6.11",
     "vue-feather-icons": "^5.0.0",
-    "vue-loader": "^15.9.2",
+    "vue-loader": "^15.9.3",
     "vue-mobile-detection": "^1.0.0",
-    "vue-router": "^3.2.0",
+    "vue-router": "^3.3.4",
     "vuex": "^3.4.0",
     "vuex-store": "^1.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.3.1",
-    "@vue/cli-plugin-eslint": "^4.3.1",
-    "@vue/cli-service": "^4.3.1",
+    "@vue/cli-plugin-babel": "^4.4.6",
+    "@vue/cli-plugin-eslint": "^4.4.6",
+    "@vue/cli-service": "^4.4.6",
     "@vue/test-utils": "^1.0.3",
-    "@vuepress/plugin-back-to-top": "^1.5.0",
+    "@vuepress/plugin-back-to-top": "^1.5.2",
     "@vuepress/plugin-blog": "^1.9.2",
     "@vuepress/theme-blog": "^1.7.1",
     "babel-eslint": "^10.1.0",
@@ -43,7 +43,7 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11",
-    "vuepress": "^1.5.0"
+    "vuepress": "^1.5.2"
   },
   "eslintConfig": {
     "root": true,
@@ -51,18 +51,11 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/recommended",
       "eslint:recommended"
     ],
-    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run test"
     }
   },
   "postcss": {
@@ -73,5 +66,11 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  }
 }
